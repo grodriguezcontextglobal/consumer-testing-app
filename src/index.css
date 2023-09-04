@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+body{
+    min-height: 80dvh;
+    max-width: 1440px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 12px 0px;
+    scrollbar-width: none;
+    font-family: 'Inter';
+}
+footer{
+    margin:0
+}
+
