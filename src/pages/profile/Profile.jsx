@@ -19,10 +19,10 @@ const Profile = () => {
   const navigate = useNavigate();
   const { register, watch } = useForm({
     defaultValues: {
-      name: consumer?.name,
-      lastName: consumer?.lastName,
-      email: consumer?.email,
-      phoneNumber: consumer?.phoneNumber,
+      name: consumer.name ? consumer.name : "Your name",
+      lastName: consumer.lastName ? consumer.lastName : "Your last name",
+      email: consumer.email ? consumer.email : "Your email",
+      phoneNumber: consumer.phoneNumber ? consumer.phoneNumber : "Your phone number",
     },
   });
   const dispatch = useDispatch();
