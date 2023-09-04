@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { onAddConsumerInfo } from "../../store/slides/consumerSlide";
 import "./Profile.css";
-import { purgeStoredState } from "redux-persist";
 import { useNavigate } from "react-router-dom";
 import { persistor } from "../../store/store";
 const Profile = () => {
@@ -20,10 +19,10 @@ const Profile = () => {
   const navigate = useNavigate();
   const { register, watch } = useForm({
     defaultValues: {
-      name: consumer.name,
-      lastName: consumer.lastName,
-      email: consumer.email,
-      phoneNumber: consumer.phoneNumber,
+      name: consumer?.name,
+      lastName: consumer?.lastName,
+      email: consumer?.email,
+      phoneNumber: consumer?.phoneNumber,
     },
   });
   const dispatch = useDispatch();
@@ -73,7 +72,7 @@ const Profile = () => {
         {editSection ? (
           <OutlinedInput
             disabled={editSection}
-            value={`${consumer.name}, ${consumer.lastName}`}
+            value={`${consumer.name ? consumer.name : "Your name"}, ${consumer.lastName ? consumer.lastName : "Your last"}`}
             style={{
               borderRadius: "12px",
               margin: "0.1rem auto 1rem",
